@@ -186,7 +186,7 @@ void kill_largest_process(const poll_loop_args_t* args, int sig)
                 cur.badness += BADNESS_PREFER;
             }
             if (args->avoid_regex && regexec(args->avoid_regex, cur.name, (size_t)0, NULL, 0) == 0) {
-                cur.badness += BADNESS_AVOID;
+                continue;
             }
         }
 
